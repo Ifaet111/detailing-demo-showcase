@@ -1,4 +1,6 @@
 @media (max-width: 900px) {
+  .concept-tabs { width: calc(100% - 84px); }
+  .lang-switch { margin: 0 8px 0 4px; flex: 0 0 auto; }
   .nav.mobile-open {
     display: flex;
     position: absolute;
