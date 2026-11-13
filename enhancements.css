@@ -1,0 +1,80 @@
+/* AURUM 2026 — progressive visual and accessibility enhancement */
+:root { --ease-premium:cubic-bezier(.22,1,.36,1); }
+html { scroll-padding-top:calc(var(--bar-h) + 28px); }
+body { overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+button, a { -webkit-tap-highlight-color:transparent; }
+:where(a,button,input):focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+.header { backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); }
+.hero-content { max-width:850px; }
+.hero h1 { text-wrap:balance; }
+.hero-content .eyebrow, .hero-content h1, .hero-content p, .hero-actions { animation:aurum-enter 850ms var(--ease-premium) both; }
+.hero-content h1 { animation-delay:100ms; }
+.hero-content p { animation-delay:210ms; }
+.hero-actions { animation-delay:320ms; }
+@keyframes aurum-enter { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+.primary,.header-cta,.concept-tab,.round,.service-card { transition:transform .4s var(--ease-premium),background-color .35s,color .35s,border-color .35s,box-shadow .35s; }
+.primary:hover { box-shadow:0 14px 36px rgba(0,0,0,.18); }
+.service-card { isolation:isolate; }
+.service-card:hover { transform:translateY(-5px); }
+.nav a { position:relative; padding-block:12px; }
+.nav a::after { content:""; position:absolute;left:0;right:100%;bottom:3px;height:1px;background:var(--accent);transition:right .35s var(--ease-premium); }
+.nav a:hover::after,.nav a:focus-visible::after { right:0; }
+.reveal { opacity:0; transform:translateY(26px); transition:opacity .85s var(--ease-premium), transform .85s var(--ease-premium); }
+.reveal.is-visible { opacity:1;transform:none; }
+.services .service-card:nth-child(2),.steps article:nth-child(2) { transition-delay:65ms; }
+.services .service-card:nth-child(3),.steps article:nth-child(3) { transition-delay:130ms; }
+.steps article:nth-child(4) { transition-delay:195ms; }
+.compare { touch-action:pan-y; cursor:ew-resize; user-select:none; }
+.compare-before { right:0; width:100%;clip-path:inset(0 50% 0 0);border-right:0;filter:grayscale(1) brightness(.5); }
+.compare-line { left:50%;pointer-events:none; }
+.compare-line span { box-shadow:0 8px 28px rgba(0,0,0,.3); }
+.compare:focus-visible { outline:3px solid var(--accent); outline-offset:-3px; }
+.modal { max-height:min(90dvh,850px);overflow-y:auto;box-shadow:0 30px 100px rgba(0,0,0,.35); }
+.modal input { min-height:44px; }
+.modal form small { line-height:1.6; }
+.concept-bar { gap:4px; }
+@media(min-width:901px) and (max-width:1200px){ .concept-tab {padding-inline:12px;} .nav {gap:16px;} .hero-content {margin-left:6vw;} }
+@media(max-width:900px){
+ .concept-tabs {min-width:0; flex:1; width:auto;scrollbar-width:none; }
+ .concept-tabs::-webkit-scrollbar {display:none;}
+ .concept-tab {flex:0 0 auto;min-width:116px;}
+ .lang-switch {flex:0 0 auto;margin-right:12px;}
+ .menu {min-height:44px;min-width:44px;cursor:pointer;}
+ .header {padding-inline:6vw;}
+ .nav.mobile-open {z-index:12;top:72px;}
+ .nav.mobile-open a {font-size:13px;opacity:1;}
+ .hero {height:auto;min-height:min(820px,100svh);padding-block:140px 165px;}
+ .hero-content {width:min(740px,88%);padding-top:0;}
+ .hero-meta {bottom:24px;}
+ .promise-head {margin-bottom:44px;}
+ .service-card:hover {transform:none;}
+ .contact .primary {white-space:normal;text-align:left;}
+}
+@media(max-width:560px) {
+ .hero { min-height:690px;padding:150px 0 85px; }
+ .hero-content {width:88%;margin-inline:6vw;}
+ .hero h1 {font-size:clamp(39px,10.7vw,58px);line-height:1.03;overflow-wrap:anywhere;}
+ body[data-concept="atelier"] .hero h1 {font-size:clamp(48px,12vw,72px);line-height:1;}
+ .hero-actions .primary {width:100%;max-width:340px;text-align:left;min-height:50px;}
+ .hero p {max-width:42ch;}
+ .promise,.process {padding-block:72px;}
+ .promise h2,.work h2,.contact h2 {font-size:clamp(32px,9vw,44px);overflow-wrap:anywhere;}
+ .service-card {padding-inline:24px;}
+ .contact {padding:70px 6vw;}
+ .modal {padding:32px 20px;}
+ .modal h2 {font-size:clamp(25px,8vw,34px);}
+ .compare {min-height:350px;}
+ footer {padding:32px 6vw;}
+ body[data-concept="editorial"] .hero {height:auto;min-height:690px;margin:10px;padding-block:150px 95px;}
+ body[data-concept="editorial"] .hero-content {margin-left:5vw;}
+}
+@media(prefers-reduced-motion:reduce) {
+ *,*::before,*::after {animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important;}
+ .reveal {opacity:1!important;transform:none!important;}
+}
+
+/* Keep marketing copy legible in light directions. */
+body[data-concept="clinical"] .hero p {color:#35433e;}
+body[data-concept="clinical"] .hero .text-link {color:#192620;}
+body[data-concept="editorial"] .hero .text-link {color:#fff;}
+@media(max-width:900px){body[data-concept="clinical"] .hero-overlay{background:linear-gradient(90deg,rgba(242,247,245,.95),rgba(242,247,245,.76) 70%,rgba(242,247,245,.4));}}
