@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f0f10">
+  <meta name="description" content="AURUM Clinical — технический концепт сайта с лабораторной логикой.">
+  <title>AURUM — Clinical</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body class="clinical-body">
+<a class="skip-link" href="#content">К содержимому</a>
+<div class="lab-switcher"><a class="lab-brand" href="index.html">AURUM <small>DESIGN LAB</small></a><nav><a class="lab-tab" href="index.html" ><span>01</span>OBSIDIAN</a><a class="lab-tab is-active" href="clinical.html" aria-current="page"><span>02</span>CLINICAL</a><a class="lab-tab" href="atelier.html" ><span>03</span>ATELIER</a><a class="lab-tab" href="velocity.html" ><span>04</span>VELOCITY</a><a class="lab-tab" href="editorial.html" ><span>05</span>EDITORIAL</a></nav><button class="lab-mobile-toggle" type="button" aria-expanded="false" aria-label="Показать список макетов">Макеты</button></div>
+<div class="clinical-layout" id="content">
+  <aside class="clinical-sidebar"><div><p class="eyebrow">SURFACE LAB</p><h1>AURUM / Clinical</h1><p>Здесь логика не журнальная, а системная: диагностика, протоколы, KPI, before/after.</p></div><nav><a href="#overview">Overview</a><a href="#protocols">Protocols</a><a href="#evidence">Evidence</a><a href="#request">Request</a></nav><div class="sidebar-note">Designed like a premium service dashboard — deliberately unlike Obsidian.</div></aside>
+  <main class="clinical-main">
+    <section class="clinical-overview" id="overview">
+      <div class="overview-copy" data-reveal><p class="eyebrow">01 / MEASURABLE CARE</p><h2>Когда эстетика подана через точность.</h2><p>Этот вариант не строится на «вау»-пафосе. Он выглядит как студия, где всё измеряют: толщину лака, зоны риска, циклы ухода и тип покрытия.</p><button class="btn btn-solid" data-open-dialog>Запросить диагностику</button></div>
+      <figure class="photo-card square" data-reveal><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80" alt="Автомобиль на технической фотосъёмке"></figure>
+    </section>
+    <section class="clinical-kpis">
+      <article data-reveal><strong>360°</strong><span>surface inspection</span></article>
+      <article data-reveal><strong>4 steps</strong><span>treatment protocol</span></article>
+      <article data-reveal><strong>2 coatings</strong><span>ceramic / film</span></article>
+      <article data-reveal><strong>1 standard</strong><span>showroom finish</span></article>
+    </section>
+    <section class="clinical-protocols" id="protocols">
+      <div class="section-head"><p class="eyebrow">02 / PROTOCOLS</p><h2>Структурные service-блоки без шаблонной подачи</h2></div>
+      <div class="protocol-list">
+        <article data-reveal><div><span>Module A</span><h3>Entry Wash & Audit</h3></div><p>Первичная мойка, съёмка дефектов, light audit и подбор сценария обработки.</p></article>
+        <article data-reveal><div><span>Module B</span><h3>Corrective Polish</h3></div><p>Точная работа по блеску и чистоте поверхности без агрессивного универсального подхода.</p></article>
+        <article data-reveal><div><span>Module C</span><h3>Coating / PPF</h3></div><p>Выбор между защитной плёнкой и керамикой в зависимости от поведения автомобиля.</p></article>
+      </div>
+    </section>
+    <section class="clinical-evidence" id="evidence">
+      <div class="section-head"><p class="eyebrow">03 / EVIDENCE</p><h2>Не красивый шум, а понятное доказательство</h2></div>
+      <div class="compare-grid">
+        <figure class="photo-card" data-reveal><img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=80" alt="Светлый автомобиль в студии"><figcaption>Vehicle intake</figcaption></figure>
+        <figure class="photo-card" data-reveal><img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=1200&q=80" alt="Колесо и детализированный кузов"><figcaption>Finish control</figcaption></figure>
+      </div>
+    </section>
+    <section class="request-strip" id="request" data-reveal><div><p class="eyebrow">04 / CONTACT</p><h2>Эта версия подходит под аудиторию, которой нужна рациональность.</h2></div><button class="btn btn-outline-dark" data-open-dialog>Открыть форму</button></section>
+  </main>
+</div>
+<dialog id="quoteDialog" class="quote-dialog"><form method="dialog" class="quote-box"><button class="quote-close" value="cancel" aria-label="Закрыть">×</button><p class="eyebrow">AURUM / DEMO REQUEST</p><h2>Обсудим ваш проект?</h2><p class="muted">Это демонстрационный сайт. Форма не отправляет данные на сервер — она только показывает сценарий взаимодействия.</p><div class="quote-grid"><label><span>Ваше имя</span><input type="text" placeholder="Иван" required></label><label><span>Автомобиль</span><input type="text" placeholder="BMW M4" required></label><label><span>Услуга</span><select required><option value="">Выберите услугу</option><option>Комплексный детейлинг</option><option>Керамическая защита</option><option>PPF / антигравийная пленка</option></select></label></div><button class="btn btn-solid" id="fakeSubmit" value="default">Показать подтверждение</button><p id="formSuccess" class="success" hidden>Готово: интерактив сработал, но данные не отправлялись.</p></form></dialog>
+</body></html>
