@@ -72,3 +72,9 @@ button, a { -webkit-tap-highlight-color:transparent; }
  *,*::before,*::after {animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important;}
  .reveal {opacity:1!important;transform:none!important;}
 }
+
+/* Keep marketing copy legible in light directions. */
+body[data-concept="clinical"] .hero p {color:#35433e;}
+body[data-concept="clinical"] .hero .text-link {color:#192620;}
+body[data-concept="editorial"] .hero .text-link {color:#fff;}
+@media(max-width:900px){body[data-concept="clinical"] .hero-overlay{background:linear-gradient(90deg,rgba(242,247,245,.95),rgba(242,247,245,.76) 70%,rgba(242,247,245,.4));}}
