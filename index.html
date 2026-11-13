@@ -3,135 +3,104 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#090909">
-  <meta name="description" content="Пять премиальных концепций сайта для детейлинг-студии AURUM.">
-  <title>AURUM — 5 концепций детейлинг-сайта</title>
+  <meta name="theme-color" content="#141412">
+  <meta name="description" content="OFFSET — независимая веб-студия. Проектируем и разрабатываем выразительные сайты, в которых идея, система и код работают вместе.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OFFSET — дизайн и разработка сайтов">
+  <meta property="og:description" content="Выразительные сайты с ясной логикой, характером и аккуратной разработкой.">
+  <meta property="og:url" content="https://ifaet111.github.io/detailing-demo-showcase/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1600&q=82">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://ifaet111.github.io/detailing-demo-showcase/">
+  <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261020-2">
-  <link rel="stylesheet" href="mobile.css?v=20261020-2">
-  <link rel="stylesheet" href="enhancements.css?v=20261113-1">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"OFFSET","url":"https://ifaet111.github.io/detailing-demo-showcase/","description":"Независимая веб-студия: дизайн и разработка сайтов.","areaServed":"Worldwide","sameAs":["https://github.com/Ifaet111"]}</script>
+  <title>OFFSET — дизайн и разработка сайтов</title>
 </head>
-<body data-concept="obsidian">
-  <a class="skip" href="#main">К содержанию</a>
-  <aside class="concept-bar" aria-label="Выбор концепции">
-    <div class="concept-brand"><span>5</span> концепций</div>
-    <div class="concept-tabs" role="tablist" aria-label="Концепции дизайна">
-      <button class="concept-tab active" data-concept="obsidian" role="tab" aria-selected="true"><i></i>01 Obsidian</button>
-      <button class="concept-tab" data-concept="clinical" role="tab" aria-selected="false"><i></i>02 Clinical</button>
-      <button class="concept-tab" data-concept="atelier" role="tab" aria-selected="false"><i></i>03 Atelier</button>
-      <button class="concept-tab" data-concept="velocity" role="tab" aria-selected="false"><i></i>04 Velocity</button>
-      <button class="concept-tab" data-concept="editorial" role="tab" aria-selected="false"><i></i>05 Editorial</button>
-    </div>
-    <span class="concept-hint">Выберите стиль</span>
-    <div class="lang-switch" aria-label="Язык сайта"><button class="active" data-lang="ru" aria-pressed="true">RU</button><button data-lang="en" aria-pressed="false">EN</button></div>
-  </aside>
+<body>
+  <a class="skip-link" href="#main">К содержанию</a>
+  <header class="site-header" data-header>
+    <a class="brand" href="#top" aria-label="OFFSET — на главную">OFF<span>/</span>SET</a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav">Меню</button>
+    <nav id="nav" class="nav" aria-label="Основная навигация">
+      <a href="#work">Работы</a><a href="#services">Услуги</a><a href="#process">Подход</a><a class="nav-cta" href="#contact">Начать проект</a>
+    </nav>
+  </header>
 
-  <div class="site-shell">
-    <header class="header">
-      <a class="logo" href="#"><span class="logo-mark">A</span><span><b>AURUM</b><small>DETAILING STUDIO</small></span></a>
-      <nav class="nav" aria-label="Основная навигация">
-        <a href="#services">Услуги</a><a href="#work">Работы</a><a href="#process">Процесс</a><a href="#contact">Контакты</a>
-      </nav>
-      <button class="header-cta open-booking">Оценить автомобиль <span>↗</span></button>
-      <button class="menu" aria-label="Открыть меню">☰</button>
-    </header>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-kicker"><span>Независимая веб-студия</span><span>Дизайн × разработка</span></div>
+      <h1 id="hero-title"><span>Сайты</span><span class="outline">с точным</span><span>смещением.</span></h1>
+      <div class="hero-bottom">
+        <p>Находим сильную идею, собираем вокруг неё визуальную систему и доводим до работающего продукта — без разрыва между макетом и кодом.</p>
+        <a class="round-link" href="#work" aria-label="Смотреть выбранные работы"><span>Смотреть<br>работы</span><span aria-hidden="true">↘</span></a>
+      </div>
+      <figure class="hero-image reveal">
+        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=84" srcset="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80 900w, https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=84 1800w" sizes="(max-width: 900px) 100vw, 88vw" width="1800" height="1125" alt="Чёрный спортивный автомобиль в минималистичном пространстве" fetchpriority="high">
+        <figcaption>Визуальное исследование / automotive</figcaption>
+      </figure>
+    </section>
 
-    <main id="main">
-      <section class="hero">
-        <div class="hero-image" aria-hidden="true"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-grid"></div>
-        <div class="hero-content">
-          <div class="eyebrow"><span></span><em id="eyebrow">Премиальный детейлинг · Москва</em></div>
-          <h1 id="hero-title">Блеск,<br><i>доведённый</i><br>до совершенства.</h1>
-          <p id="hero-text">Возвращаем автомобилю глубину цвета и защищаем результат на годы. Работаем с каждым кузовом как с коллекционным объектом.</p>
-          <div class="hero-actions">
-            <button class="primary open-booking">Рассчитать стоимость <span>↗</span></button>
-            <a class="text-link" href="#work">Смотреть работы <span>↓</span></a>
-          </div>
+    <section class="manifesto section-pad" aria-label="О студии">
+      <p class="eyebrow">01 / Позиция</p>
+      <div class="manifesto-copy reveal"><p>Хороший сайт начинается не с набора блоков.</p><p>Он начинается с <em>точки зрения.</em></p></div>
+      <p class="side-note">OFFSET соединяет стратегию, арт-дирекшн и фронтенд. Поэтому решения остаются цельными от первого наброска до публикации.</p>
+    </section>
+
+    <section class="work section-pad" id="work" aria-labelledby="work-title">
+      <div class="section-head"><p class="eyebrow">02 / Выбранная работа</p><h2 id="work-title">Detailing<br>concept study</h2><p class="work-label">Self-initiated / 2026</p></div>
+      <div class="case-grid">
+        <figure class="case-main reveal"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1500&q=82" width="1500" height="1000" loading="lazy" alt="Спортивный автомобиль на тёмной дороге"><figcaption>Obsidian / cinematic direction</figcaption></figure>
+        <div class="case-copy">
+          <p class="case-lead">Пять визуальных направлений для одной сферы — упражнение на характер, ритм и позиционирование.</p>
+          <p>Это инициативное исследование OFFSET, а не коммерческий заказ. У него нет выдуманного клиента, роста конверсии или наград. Задача честнее: показать, как одна тема может получить пять разных цифровых голосов.</p>
+          <a class="text-link" href="v4/">Открыть пять концептов <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="hero-meta">
-          <div><strong>7+</strong><span>лет опыта</span></div>
-          <div><strong>1 840</strong><span>автомобилей</span></div>
-          <div><strong>4.9</strong><span>рейтинг студии</span></div>
-        </div>
-        <div class="scroll-cue">листайте <span>↓</span></div>
-      </section>
+        <figure class="case-small reveal"><img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1100&q=82" width="1100" height="1375" loading="lazy" alt="Деталь современного автомобиля при студийном освещении"><figcaption>Material, light, restraint</figcaption></figure>
+      </div>
+      <div class="archive-row"><span>Предыдущие итерации сохранены</span><a href="archive/v2/">V2</a><a href="v3/">V3</a><a href="v4/">V4</a></div>
+    </section>
 
-      <section class="promise" id="services">
-        <div class="section-kicker">Что мы делаем</div>
-        <div class="promise-head">
-          <h2 id="section-title">Не просто чисто.<br><i>Безупречно.</i></h2>
-          <p id="section-copy">Точный протокол, премиальные составы и спокойная уверенность в результате — от первичной оценки до выдачи автомобиля.</p>
-        </div>
-        <div class="services">
-          <article class="service-card featured">
-            <span class="service-num">01</span><div class="service-icon">◒</div>
-            <h3>Керамическая защита</h3><p>Глубокий глянец, гидрофобный эффект и защита лака до 36 месяцев.</p>
-            <div class="price">от 45 000 ₽</div><button class="round open-booking" aria-label="Записаться">↗</button>
-          </article>
-          <article class="service-card">
-            <span class="service-num">02</span><div class="service-icon">◇</div>
-            <h3>Полиуретановая плёнка</h3><p>Незаметный барьер от сколов, реагентов и дорожного песка.</p>
-            <div class="price">от 120 000 ₽</div><button class="round open-booking" aria-label="Записаться">↗</button>
-          </article>
-          <article class="service-card">
-            <span class="service-num">03</span><div class="service-icon">✦</div>
-            <h3>Восстановительный уход</h3><p>Деликатная очистка салона, кожи, дисков и сложных поверхностей.</p>
-            <div class="price">от 25 000 ₽</div><button class="round open-booking" aria-label="Записаться">↗</button>
-          </article>
-        </div>
-      </section>
+    <section class="services section-pad" id="services" aria-labelledby="services-title">
+      <p class="eyebrow">03 / Что делаем</p>
+      <h2 id="services-title">От смысла<br>до релиза.</h2>
+      <div class="service-list">
+        <article><span>01</span><h3>Концепция и структура</h3><p>Разбираем задачу, аудиторию и контекст. Формулируем идею и архитектуру будущего сайта.</p></article>
+        <article><span>02</span><h3>Дизайн-система</h3><p>Создаём арт-дирекшн, типографику, сетку и интерактивный язык, который выдерживает весь продукт.</p></article>
+        <article><span>03</span><h3>Разработка</h3><p>Собираем адаптивный, доступный и быстрый интерфейс. Подключаем контент и проверяем реальные сценарии.</p></article>
+        <article><span>04</span><h3>Запуск и развитие</h3><p>Проводим финальный контроль, публикуем и оставляем понятную основу для следующих итераций.</p></article>
+      </div>
+    </section>
 
-      <section class="work" id="work">
-        <div class="work-copy">
-          <div class="section-kicker">Результат</div>
-          <h2>Разница видна.<br><i>Качество — ощущается.</i></h2>
-          <p>Покрытие раскрывает цвет, делает поверхность визуально глубже и упрощает ежедневный уход.</p>
-          <ul><li><span>✓</span> Фотофиксация каждого этапа</li><li><span>✓</span> Прозрачная смета до начала работ</li><li><span>✓</span> Гарантия на покрытия и плёнку</li></ul>
-        </div>
-        <div class="compare" aria-label="Демонстрация до и после">
-          <div class="compare-image"></div><div class="compare-before"></div>
-          <div class="compare-line"><span>↔</span></div>
-          <b class="before-label">ДО</b><b class="after-label">ПОСЛЕ</b>
-        </div>
-      </section>
+    <section class="process section-pad" id="process" aria-labelledby="process-title">
+      <div><p class="eyebrow">04 / Принцип работы</p><h2 id="process-title">Не конвейер.<br>Совместная<br>работа.</h2></div>
+      <div class="process-copy"><p>Мы не начинаем с готового шаблона и не прячем решения за трендами. Каждый проект получает свою логику, визуальный темперамент и меру сложности.</p><ol><li><strong>Слышим</strong><span>задачу и ограничения</span></li><li><strong>Формулируем</strong><span>центральную идею</span></li><li><strong>Проверяем</strong><span>решения в интерфейсе</span></li><li><strong>Доводим</strong><span>до работающей публикации</span></li></ol></div>
+    </section>
 
-      <section class="process" id="process">
-        <div class="section-kicker">Как всё устроено</div>
-        <h2>Четыре шага к идеальному виду</h2>
-        <div class="steps">
-          <article><span>01</span><h3>Осмотр</h3><p>Оцениваем состояние и согласуем точный набор работ.</p></article>
-          <article><span>02</span><h3>Подготовка</h3><p>Безопасно очищаем поверхности и устраняем дефекты.</p></article>
-          <article><span>03</span><h3>Защита</h3><p>Наносим выбранное покрытие в контролируемой среде.</p></article>
-          <article><span>04</span><h3>Выдача</h3><p>Показываем результат и даём рекомендации по уходу.</p></article>
-        </div>
-      </section>
+    <section class="contact section-pad" id="contact" aria-labelledby="contact-title">
+      <p class="eyebrow">05 / Новый проект</p>
+      <h2 id="contact-title">Есть идея?<br><span>Сместим фокус.</span></h2>
+      <div class="contact-bottom"><p>Расскажите, что хотите запустить. Короткого описания достаточно, чтобы начать разговор.</p><button class="project-button" type="button" data-dialog-open><span>Заполнить бриф</span><span aria-hidden="true">↗</span></button></div>
+    </section>
+  </main>
 
-      <section class="contact" id="contact">
-        <div><div class="section-kicker">Готовы начать?</div><h2>Ваш автомобиль<br><i>заслуживает большего.</i></h2></div>
-        <button class="primary light open-booking">Получить расчёт за 10 минут <span>↗</span></button>
-      </section>
-    </main>
+  <footer><a class="brand" href="#top">OFF<span>/</span>SET</a><p>Дизайн и разработка сайтов</p><a href="https://github.com/Ifaet111" rel="me">GitHub ↗</a><p>© 2026 OFFSET</p></footer>
 
-    <footer><a class="logo" href="#"><span class="logo-mark">A</span><span><b>AURUM</b><small>DETAILING STUDIO</small></span></a><p>Демонстрационная концепция · данные и цены приведены для примера</p><span>© 2026</span></footer>
-  </div>
-
-  <dialog class="modal" id="booking">
-    <button class="modal-close" aria-label="Закрыть">×</button>
-    <div class="section-kicker">Быстрая оценка</div><h2>Расскажите об автомобиле</h2><p>Оставьте контакты — менеджер уточнит задачу и подготовит предварительный расчёт.</p>
-    <form id="booking-form">
-      <label>Имя<input name="name" required placeholder="Александр"></label>
-      <label>Телефон<input name="phone" required inputmode="tel" placeholder="+7 999 000-00-00"></label>
-      <label>Автомобиль<input name="car" placeholder="Марка и модель"></label>
-      <button class="primary" type="submit">Получить расчёт <span>↗</span></button>
-      <small>Нажимая кнопку, вы соглашаетесь на обработку данных.</small>
+  <dialog class="brief-dialog" aria-labelledby="brief-title">
+    <form method="dialog" class="dialog-shell" id="brief-form">
+      <div class="dialog-head"><h2 id="brief-title">Короткий бриф</h2><button type="button" data-dialog-close aria-label="Закрыть">×</button></div>
+      <label>Как к вам обращаться?<input name="name" autocomplete="name" required></label>
+      <label>Что нужно сделать?<textarea name="project" rows="4" required placeholder="Например: сайт для нового продукта…"></textarea></label>
+      <label>Ссылка для связи<input name="contact" inputmode="url" required placeholder="Telegram, email или другой удобный способ"></label>
+      <p class="form-note">Данные никуда не отправляются автоматически. Мы соберём текст, который можно скопировать и передать OFFSET удобным способом.</p>
+      <button class="copy-brief" type="submit" value="default">Скопировать бриф</button><p class="form-status" role="status" aria-live="polite"></p>
     </form>
-    <div class="success" hidden><span>✓</span><h3>Заявка принята</h3><p>Это демонстрация формы. В готовом проекте подключим вашу CRM или мессенджер.</p></div>
   </dialog>
-  <script src="app.js?v=20261020-2"></script>
-  <script src="enhancements.js?v=20261113-1"></script>
+
+  <script src="app.js" defer></script>
 </body>
 </html>

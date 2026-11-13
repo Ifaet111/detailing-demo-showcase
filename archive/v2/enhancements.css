@@ -78,3 +78,7 @@ body[data-concept="clinical"] .hero p {color:#35433e;}
 body[data-concept="clinical"] .hero .text-link {color:#192620;}
 body[data-concept="editorial"] .hero .text-link {color:#fff;}
 @media(max-width:900px){body[data-concept="clinical"] .hero-overlay{background:linear-gradient(90deg,rgba(242,247,245,.95),rgba(242,247,245,.76) 70%,rgba(242,247,245,.4));}}
+:root{--hero:url('../../assets/hero-dark.png')}
+body[data-concept="clinical"]{--hero:url('../../assets/hero-light.png')}
+body[data-concept="atelier"],body[data-concept="velocity"]{--hero:url('../../assets/hero-night.png')}
+body[data-concept="editorial"]{--hero:url('../../assets/hero-light.png')}
