@@ -1,16 +1,76 @@
-# OFFSET — studio website
+# OFFSET — автомобильная коллекция
 
-Public portfolio site for OFFSET, an independent web design and development studio.
+Сайт: https://ifaet111.github.io/detailing-demo-showcase/
 
-## Published routes
+В GitHub ветка `offset-source` хранит исходники и скрипты сборки, а `main` — готовую статическую публикацию для существующей настройки GitHub Pages `main / (root)`. При клонировании исходников используйте `git clone --branch offset-source https://github.com/Ifaet111/detailing-demo-showcase.git`.
 
-- `/` — current OFFSET studio website
-- `/v4/` — detailing concept study, latest iteration
-- `/v3/` — archived concept iteration
-- `/archive/v2/` — original archived showcase
+Главная студии и пять самостоятельных сайтов-концептов. Статический HTML, CSS и JavaScript без сторонних зависимостей. Для запуска и сборки нужен Node.js 20 или новее.
 
-The detailing work is self-initiated and does not claim a client relationship or commercial results. Photography licensing notes are in [`PHOTO_CREDITS.md`](PHOTO_CREDITS.md).
+| Адрес | Проект | Сценарий |
+| --- | --- | --- |
+| `/` | OFFSET | Выбор проекта, бриф и связь со студией |
+| `/detail/` | AURUM | Подбор процедуры ухода за автомобилем |
+| `/heritage/` | PATINA | Подготовка обращения по реставрации |
+| `/club/` | КИЛОМЕТР | Выбор автомобильного маршрута |
+| `/drive/` | VELOCITY | Подбор машины и параметров поездки |
+| `/service/` | APEX | Выбор симптома и подготовка обращения в сервис |
+| `/credits/` | Фотографии | Авторы, источники и лицензии |
 
-## Quality baseline
+Демо обозначены как концепты портфолио. Они не представляют действующие компании и не принимают реальные бронирования.
 
-The site is responsive, keyboard-accessible, respectful of `prefers-reduced-motion`, and uses semantic HTML, responsive images, SEO metadata, a sitemap and robots directives. It is deployed as a static GitHub Pages site.
+## Запуск
+
+Откройте терминал в этой папке:
+
+```sh
+npm run dev
+```
+
+Откройте `http://127.0.0.1:4187`. Остановка сервера — `Ctrl+C`. Устанавливать npm-пакеты не нужно. В PowerShell при ограничении запуска `npm.ps1` используйте `npm.cmd` вместо `npm`.
+
+## Проверка и сборка
+
+```sh
+npm run check
+npm run build
+npm run preview
+```
+
+`check` проверяет внутренние ссылки и якоря, синтаксис JavaScript, язык документа, единственный `h1`, уникальность `id`, наличие `alt` и размеров у изображений. Это не замена ручной проверке в браузере.
+
+`build` заново создаёт `dist/` из `src/` и добавляет метаданные для публикации. `preview` открывает собранную версию на том же локальном адресе; сначала остановите dev-сервер, если он занимает порт.
+
+## Структура
+
+```text
+src/                 исходники сайта
+  detail/            AURUM
+  heritage/          PATINA
+  club/              КИЛОМЕТР
+  drive/             VELOCITY
+  service/           APEX
+  shared/            общий базовый CSS, меню, формы, конфигурация
+  assets/            локальные WebP и сведения об источниках
+scripts/             локальный сервер, проверка и сборка на Node.js
+dist/                результат сборки; публикуется целиком
+ASSET-LICENSES.md     авторы фотографий и ссылки на лицензии
+DEPLOYMENT.md         порядок публикации и настройки URL
+```
+
+Правьте `src/`, затем пересобирайте. Изменения внутри `dist/` будут заменены следующей сборкой.
+
+## Связь и формы
+
+Контакт студии настроен в `src/shared/config.js`: **andrewvasilen4@gmail.com**. Бриф OFFSET формирует готовый текст и ссылку `mailto:`. Посетитель открывает письмо в своём приложении и отправляет его самостоятельно. Если приложение не настроено, доступны копирование и скачивание `.txt`.
+
+Формы пяти демо только формируют локальный текст обращения. Данные не отправляются на сервер, даты не подтверждают запись. Бэкенд и внешний сервис форм для текущего сценария не нужны. Сайт не содержит аналитики и не устанавливает cookies.
+
+## Перед публикацией
+
+Публичный URL GitHub Pages уже настроен в `src/shared/config.js`. Для другого адреса измените `SITE_URL` или `siteUrl`, выполните сборку и загрузите `dist/`. Собственный домен необязателен: подойдёт адрес выбранного хостинга. Без URL сайт работает, но сборка не добавляет canonical и sitemap с выдуманным адресом. Подробные шаги — в [DEPLOYMENT.md](DEPLOYMENT.md).
+
+Сведения об изображениях — в [ASSET-LICENSES.md](ASSET-LICENSES.md) и `src/assets/asset-manifest.json`. Фотографии сохранены локально; внешние CDN для работы сайта не нужны. Производители автомобилей и авторы снимков не заявлены клиентами или партнёрами OFFSET.
+
+## Исходный проект
+
+Предыдущая версия сохранена в истории Git, коммит `7b63c9ca2bcbcc7989a343a47f21770df7266d12`. Новая реализация сохраняет название OFFSET, статический формат и полезные принципы доступности. Старые версии и нарисованные автомобили в новую публикацию не включены.
