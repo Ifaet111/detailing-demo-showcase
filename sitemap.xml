@@ -1,7 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://ifaet111.github.io/detailing-demo-showcase/</loc><priority>1.0</priority></url>
-  <url><loc>https://ifaet111.github.io/detailing-demo-showcase/v4/</loc><priority>0.7</priority></url>
-  <url><loc>https://ifaet111.github.io/detailing-demo-showcase/v3/</loc><priority>0.4</priority></url>
-  <url><loc>https://ifaet111.github.io/detailing-demo-showcase/archive/v2/</loc><priority>0.3</priority></url>
-</urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://ifaet111.github.io/detailing-demo-showcase/</loc></url><url><loc>https://ifaet111.github.io/detailing-demo-showcase/detail/</loc></url><url><loc>https://ifaet111.github.io/detailing-demo-showcase/heritage/</loc></url><url><loc>https://ifaet111.github.io/detailing-demo-showcase/club/</loc></url><url><loc>https://ifaet111.github.io/detailing-demo-showcase/drive/</loc></url><url><loc>https://ifaet111.github.io/detailing-demo-showcase/service/</loc></url></urlset>

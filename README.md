@@ -1,16 +1,21 @@
-# OFFSET — studio website
+# OFFSET — автомобильная коллекция
 
-Public portfolio site for OFFSET, an independent web design and development studio.
+Сайт: https://ifaet111.github.io/detailing-demo-showcase/
 
-## Published routes
+Главная веб-студии и пять самостоятельных сайтов: AURUM (детейлинг), PATINA (реставрация), КИЛОМЕТР (автоклуб), VELOCITY (прокат) и APEX (автосервис).
 
-- `/` — current OFFSET studio website
-- `/v4/` — detailing concept study, latest iteration
-- `/v3/` — archived concept iteration
-- `/archive/v2/` — original archived showcase
+Эта ветка `main` содержит готовую статическую публикацию для GitHub Pages. [Исходники, сборка, инструкции и отчёт проверки находятся в ветке offset-source](https://github.com/Ifaet111/detailing-demo-showcase/tree/offset-source).
 
-The detailing work is self-initiated and does not claim a client relationship or commercial results. Photography licensing notes are in [`PHOTO_CREDITS.md`](PHOTO_CREDITS.md).
+Для разработки:
 
-## Quality baseline
+```sh
+git clone --branch offset-source https://github.com/Ifaet111/detailing-demo-showcase.git
+cd detailing-demo-showcase
+npm run dev
+```
 
-The site is responsive, keyboard-accessible, respectful of `prefers-reduced-motion`, and uses semantic HTML, responsive images, SEO metadata, a sitemap and robots directives. It is deployed as a static GitHub Pages site.
+Нужен Node.js 20+, установка зависимостей не требуется. Проверка — `npm run check`, сборка — `npm run build`.
+
+Бриф OFFSET формирует письмо на andrewvasilen4@gmail.com; отправку выполняет посетитель. Демо сохраняют текст локально, без реальных бронирований и отправки персональных данных.
+
+Фотографии сохранены локально. Авторы и лицензии — в [ASSET-LICENSES.md](ASSET-LICENSES.md) и на [странице авторов](https://ifaet111.github.io/detailing-demo-showcase/credits/). Предыдущая версия сохранена в истории Git.
