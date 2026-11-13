@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f0f10">
+  <meta name="description" content="AURUM Editorial — концепт в стиле автомобильного журнала.">
+  <title>AURUM — Editorial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body class="editorial-body">
+<a class="skip-link" href="#content">К содержимому</a>
+<div class="lab-switcher"><a class="lab-brand" href="index.html">AURUM <small>DESIGN LAB</small></a><nav><a class="lab-tab" href="index.html" ><span>01</span>OBSIDIAN</a><a class="lab-tab" href="clinical.html" ><span>02</span>CLINICAL</a><a class="lab-tab" href="atelier.html" ><span>03</span>ATELIER</a><a class="lab-tab" href="velocity.html" ><span>04</span>VELOCITY</a><a class="lab-tab is-active" href="editorial.html" aria-current="page"><span>05</span>EDITORIAL</a></nav><button class="lab-mobile-toggle" type="button" aria-expanded="false" aria-label="Показать список макетов">Макеты</button></div>
+<div class="editorial-wrap" id="content">
+  <header class="editorial-mast">
+    <div><span>ISSUE 001</span><span>AUTOMOTIVE CULTURE</span></div>
+    <h1>AURUM <small>Journal</small></h1>
+    <div><span>DESIGN LAB</span><span>LONGFORM CONCEPT</span></div>
+  </header>
+  <section class="editorial-feature">
+    <div class="feature-copy" data-reveal><p class="eyebrow">COVER STORY</p><h2>Сайт как редакционный материал, а не как лендинг.</h2><p>Editorial построен по законам медиа: masthead, cover story, side notes, image essay и длинная типографическая полоса. Это убирает ощущение типового шаблона почти полностью.</p><button class="btn btn-paper" data-open-dialog>Связаться</button></div>
+    <figure class="photo-card tall" data-reveal><img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=1400&q=80" alt="Автомобиль для редакционного материала"></figure>
+  </section>
+  <section class="editorial-columns">
+    <article data-reveal><h3>Editor’s note</h3><p>Вместо стандартных карточек услуг — колонка редактора с объяснением философии сервиса.</p></article>
+    <article data-reveal><h3>Road test</h3><p>Вместо “о нас” — формат тест-драйва, где акцент на опыте владения после детейлинга.</p></article>
+    <article data-reveal><h3>Detail notes</h3><p>Небольшие маргиналии и сноски создают ощущение продуманной публикации.</p></article>
+  </section>
+  <section class="editorial-essay">
+    <figure class="photo-card" data-reveal><img src="https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?auto=format&fit=crop&w=1200&q=80" alt="Синий автомобиль"></figure>
+    <div class="essay-copy" data-reveal><p class="eyebrow">PHOTO ESSAY</p><h2>Визуальный ритм строится на больших фото и чистом тексте.</h2><p>Здесь сайт специально не пытается быть “удобным конструктором”. Он показывает, что автор умеет мыслить форматом, а не только генерировать секции.</p></div>
+  </section>
+  <section class="editorial-notes">
+    <div class="notes-list" data-reveal><p>01 / Настоящие фотографии вместо SVG.</p><p>02 / Иная типографика и сетка.</p><p>03 / Уникальная логика повествования.</p></div>
+    <blockquote data-reveal>Хороший концепт — это не просто код. Это позиция, вкус и ясная идея, которую код помогает реализовать.</blockquote>
+  </section>
+</div>
+<dialog id="quoteDialog" class="quote-dialog"><form method="dialog" class="quote-box"><button class="quote-close" value="cancel" aria-label="Закрыть">×</button><p class="eyebrow">AURUM / DEMO REQUEST</p><h2>Обсудим ваш проект?</h2><p class="muted">Это демонстрационный сайт. Форма не отправляет данные на сервер — она только показывает сценарий взаимодействия.</p><div class="quote-grid"><label><span>Ваше имя</span><input type="text" placeholder="Иван" required></label><label><span>Автомобиль</span><input type="text" placeholder="BMW M4" required></label><label><span>Услуга</span><select required><option value="">Выберите услугу</option><option>Комплексный детейлинг</option><option>Керамическая защита</option><option>PPF / антигравийная пленка</option></select></label></div><button class="btn btn-solid" id="fakeSubmit" value="default">Показать подтверждение</button><p id="formSuccess" class="success" hidden>Готово: интерактив сработал, но данные не отправлялись.</p></form></dialog>
+</body></html>
