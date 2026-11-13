@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f0f10">
+  <meta name="description" content="AURUM Atelier — тёплый бутиковый концепт сайта детейлинг-студии.">
+  <title>AURUM — Atelier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body class="atelier-body">
+<a class="skip-link" href="#content">К содержимому</a>
+<div class="lab-switcher"><a class="lab-brand" href="index.html">AURUM <small>DESIGN LAB</small></a><nav><a class="lab-tab" href="index.html" ><span>01</span>OBSIDIAN</a><a class="lab-tab" href="clinical.html" ><span>02</span>CLINICAL</a><a class="lab-tab is-active" href="atelier.html" aria-current="page"><span>03</span>ATELIER</a><a class="lab-tab" href="velocity.html" ><span>04</span>VELOCITY</a><a class="lab-tab" href="editorial.html" ><span>05</span>EDITORIAL</a></nav><button class="lab-mobile-toggle" type="button" aria-expanded="false" aria-label="Показать список макетов">Макеты</button></div>
+<main id="content" class="atelier-main">
+  <section class="atelier-hero">
+    <div class="atelier-copy" data-reveal><p class="eyebrow">BOUTIQUE STUDIO / CURATED CARE</p><h1>Как если бы детейлинг существовал в мире нишевой эстетики.</h1><p>Atelier — не про силу и не про технику. Это более эмоциональный, fashion-подход: мягкая палитра, воздух, асимметрия и галерейная подача.</p><button class="btn btn-soft" data-open-dialog>Забронировать консультацию</button></div>
+    <div class="atelier-stack" data-reveal>
+      <figure class="photo-card tall"><img src="https://images.unsplash.com/photo-1494905998402-395d579af36f?auto=format&fit=crop&w=1200&q=80" alt="Серебристый автомобиль с мягким светом"></figure>
+      <div class="atelier-note">Каждый блок собран не по шаблону сетки, а по редакционному принципу: крупный тезис → пауза → image anchor → короткий смысловой блок.</div>
+    </div>
+  </section>
+  <section class="atelier-ribbon"><span>PRIVATE APPOINTMENTS</span><span>HAND-FINISHED SURFACES</span><span>QUIET LUXURY</span></section>
+  <section class="atelier-story">
+    <div class="story-left" data-reveal><p class="eyebrow">01 / STORY</p><h2>Здесь главное — чувство материала.</h2><p>Мы специально уводим сайт от типичного лендинга «услуга / карточка / цена». Вместо этого — история, фактура, настроение и ощущение высокого сервиса.</p></div>
+    <figure class="photo-card wide" data-reveal><img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1200&q=80" alt="Деталь кузова с отражениями"></figure>
+  </section>
+  <section class="atelier-services">
+    <div class="section-head"><p class="eyebrow">02 / CURATED MENU</p><h2>Услуги как авторское меню</h2></div>
+    <div class="atelier-menu">
+      <details open data-reveal><summary>Gloss Ritual <span>01</span></summary><p>Многоэтапная полировка и насыщение глубины цвета.</p></details>
+      <details data-reveal><summary>Protection Edit <span>02</span></summary><p>Защитная плёнка и керамика, подобранные под реальный сценарий использования.</p></details>
+      <details data-reveal><summary>Interior Ceremony <span>03</span></summary><p>Чистка кожи, текстиля и пластика с акцентом на премиальное ощущение после выдачи.</p></details>
+    </div>
+  </section>
+  <section class="atelier-gallery">
+    <figure class="photo-card" data-reveal><img src="https://images.unsplash.com/photo-1485291571150-772bcfc10da5?auto=format&fit=crop&w=1000&q=80" alt="Интерьер автомобиля"></figure>
+    <figure class="photo-card" data-reveal><img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80" alt="Фара автомобиля крупным планом"></figure>
+    <blockquote data-reveal>«Если сайт уже на демо-этапе выглядит как вещь, у него есть шанс жить как бренд, а не как нейронный черновик.»</blockquote>
+  </section>
+  <section class="cta-panel beige-cta" data-reveal><div><p class="eyebrow">03 / INVITATION</p><h2>Atelier — самый “не лендинговый” из пяти макетов.</h2></div><button class="btn btn-soft" data-open-dialog>Открыть форму</button></section>
+</main>
+<dialog id="quoteDialog" class="quote-dialog"><form method="dialog" class="quote-box"><button class="quote-close" value="cancel" aria-label="Закрыть">×</button><p class="eyebrow">AURUM / DEMO REQUEST</p><h2>Обсудим ваш проект?</h2><p class="muted">Это демонстрационный сайт. Форма не отправляет данные на сервер — она только показывает сценарий взаимодействия.</p><div class="quote-grid"><label><span>Ваше имя</span><input type="text" placeholder="Иван" required></label><label><span>Автомобиль</span><input type="text" placeholder="BMW M4" required></label><label><span>Услуга</span><select required><option value="">Выберите услугу</option><option>Комплексный детейлинг</option><option>Керамическая защита</option><option>PPF / антигравийная пленка</option></select></label></div><button class="btn btn-solid" id="fakeSubmit" value="default">Показать подтверждение</button><p id="formSuccess" class="success" hidden>Готово: интерактив сработал, но данные не отправлялись.</p></form></dialog>
+</body></html>
