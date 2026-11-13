@@ -53,6 +53,7 @@
     modal.setAttribute('aria-labelledby','booking-heading');
     const heading=modal.querySelector('h2');if(heading)heading.id='booking-heading';
     modal.addEventListener('close',()=>{form.reset();form.hidden=false;const success=modal.querySelector('.success');if(success)success.hidden=true;});
+    form.addEventListener('submit',()=>{const success=modal.querySelector('.success');if(success){const h=success.querySelector('h3'),p=success.querySelector('p');if(h)h.textContent=document.documentElement.lang==='en'?'Demo completed':'Демонстрация завершена';if(p)p.textContent=document.documentElement.lang==='en'?'No details were submitted. Connect a secure booking service before launch.':'Данные никуда не отправлены. Для реальных заявок необходимо подключить защищённый сервис.';}});
     const note=form.querySelector('small');
     if(note) note.textContent=document.documentElement.lang==='en'?'Demo only: no information is submitted or stored.':'Демо: данные никуда не отправляются и не сохраняются.';
     const enObserver=new MutationObserver(()=>{if(note)note.textContent=document.documentElement.lang==='en'?'Demo only: no information is submitted or stored.':'Демо: данные никуда не отправляются и не сохраняются.';});
