@@ -10,13 +10,13 @@ function translate(){
  document.querySelectorAll('title,meta[name="description"],meta[property="og:title"],meta[property="og:description"],input[placeholder],textarea[placeholder],input[aria-label],textarea[aria-label],img[alt],form[data-title]').forEach(el=>{
   if(el.tagName==='TITLE'){
    const original=originals.has(el)?originals.get(el):el.textContent;
-   originals.set(el,original);el.textContent=render(original);return;
+   originals.set(el,original);const translated=render(original);if(el.textContent!==translated)el.textContent=translated;return;
   }
   const names=el.tagName==='META'?['content']:el.tagName==='IMG'?['alt']:el.tagName==='FORM'?['data-title']:['placeholder','aria-label'];
   let cache=attrs.get(el);if(!cache){cache={};attrs.set(el,cache)}
   names.forEach(name=>{if(!el.hasAttribute(name))return;
    if(!(name in cache))cache[name]=el.getAttribute(name);
-   el.setAttribute(name,render(cache[name]));
+   const translated=render(cache[name]);if(el.getAttribute(name)!==translated)el.setAttribute(name,translated);
   });
  });
  // Use element text nodes rather than TreeWalker for mobile Safari stability.
