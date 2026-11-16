@@ -5,11 +5,45 @@ const langs=['ru','en','pl'];const map=new Map(entries.map(([ru,en,pl])=>[ru,{en
 const originals=new WeakMap(); const attrs=new WeakMap();
 const choose=()=>{try{return localStorage.getItem('avenor-language')}catch{return null}};
 let active=langs.includes(choose())?choose():'ru';
-function translate(){document.documentElement.lang=active;document.querySelectorAll('title,meta[name="description"],meta[property="og:title"],meta[property="og:description"],input[placeholder],textarea[placeholder],input[aria-label],textarea[aria-label]').forEach(el=>{if(el.tagName==='TITLE'){const v=originals.get(el)||el.textContent;originals.set(el,v);el.textContent=render(v);return}if(el.tagName==='META'){const v=attrs.get(el)||el.content;attrs.set(el,v);el.content=render(v);return}for(const attr of ['placeholder','aria-label']){if(el.hasAttribute(attr)){const key=attr+'-ru';const v=el.dataset[key]||el.getAttribute(attr);el.dataset[key]=v;el.setAttribute(attr,render(v))}}});
-const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let node;while(node=walker.nextNode()){if(node.parentElement?.closest('script,style,textarea,option[data-no-i18n],code,pre'))continue;const original=originals.get(node)||node.nodeValue; if(!original.trim())continue;originals.set(node,original);node.nodeValue=render(original)}
-document.querySelectorAll('[data-language-choice]').forEach(b=>{const is=b.dataset.languageChoice===active;b.setAttribute('aria-pressed',String(is));b.classList.toggle('is-active',is)});
+function translate(){
+ document.documentElement.lang=active;
+ document.querySelectorAll('title,meta[name="description"],meta[property="og:title"],meta[property="og:description"],input[placeholder],textarea[placeholder],input[aria-label],textarea[aria-label],img[alt],form[data-title]').forEach(el=>{
+  if(el.tagName==='TITLE'){const base=originals.get(el)??el.textContent; originals.set(el,base);el.textContent=render(base);return;}
+  for(const attr of el.tagName==='META'?['content']:el.tagName==='IMG'?['alt']:el.tagName==='FORM'?['data-title']:['placeholder','aria-label']){
+   if(!el.hasAttribute(attr))continue;
+   let data=attrs.get(el);if(!data){data={};attrs.set(el,data)};
+   if(!(attr in data))data[attr]=el.getAttribute(attr);
+   el.setAttribute(attr,render(data[attr]));
+  }
+ });
+ const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let node;
+ while((node=walker.nextNode())){
+  if(node.parentElement?.closest('script,style,textarea,code,pre'))continue;
+  const base=originals.get(node)??node.nodeValue;
+  if(!base.trim())continue;
+  originals.set(node,base);
+  const translated=render(base);
+  if(node.nodeValue!==translated)node.nodeValue=translated;
+ }
+ document.querySelectorAll('[data-language-choice]').forEach(b=>{
+  const selected=b.dataset.languageChoice===active;
+  b.setAttribute('aria-pressed',String(selected));b.classList.toggle('is-active',selected)
+ });
 }
-function render(text){if(active==='ru')return text;const trimmed=text.trim();const hit=map.get(trimmed);if(hit)return text.replace(trimmed,hit[active]);return text;}
+function render(value){
+ if(active==='ru')return value;
+ const exact=map.get(value.trim());
+ if(exact)return value.replace(value.trim(),exact[active]);
+ // Some content spans multiple sentences or is separated by inline markup.
+ // Apply longest known phrases while preserving surrounding punctuation and spacing.
+ let out=value;
+ for(const [ru,translations] of sortedEntries){
+  if(ru.length<4 || !out.includes(ru))continue;
+  out=out.split(ru).join(translations[active]);
+ }
+ return out;
+}
+const sortedEntries=[...map.entries()].sort((a,b)=>b[0].length-a[0].length);
 function mount(){if(document.querySelector('[data-language-switcher]'))return;const nav=document.createElement('div');nav.className='avenor-languages';nav.setAttribute('role','group');nav.setAttribute('aria-label','Website language / Język strony / Язык сайта');nav.dataset.languageSwitcher='';nav.innerHTML=langs.map(l=>'<button type="button" data-language-choice="'+l+'" lang="'+l+'" aria-label="'+({ru:'Русский',en:'English',pl:'Polski'}[l])+'">'+l.toUpperCase()+'</button>').join('');document.body.append(nav);nav.addEventListener('click',e=>{const lang=e.target.closest('[data-language-choice]')?.dataset.languageChoice;if(!langs.includes(lang))return;active=lang;try{localStorage.setItem('avenor-language',lang)}catch{}translate()});translate();}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();
 })();
