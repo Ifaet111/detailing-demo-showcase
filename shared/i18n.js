@@ -52,5 +52,18 @@ function render(value){
 }
 const sortedEntries=[...map.entries()].sort((a,b)=>b[0].length-a[0].length);
 function mount(){if(document.querySelector('[data-language-switcher]'))return;const nav=document.createElement('div');nav.className='avenor-languages';nav.setAttribute('role','group');nav.setAttribute('aria-label','Website language / Język strony / Язык сайта');nav.dataset.languageSwitcher='';nav.innerHTML=langs.map(l=>'<button type="button" data-language-choice="'+l+'" lang="'+l+'" aria-label="'+({ru:'Русский',en:'English',pl:'Polski'}[l])+'">'+l.toUpperCase()+'</button>').join('');document.body.append(nav);nav.addEventListener('click',e=>{const lang=e.target.closest('[data-language-choice]')?.dataset.languageChoice;if(!langs.includes(lang))return;active=lang;try{localStorage.setItem('avenor-language',lang)}catch{}translate()});translate();}
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();
+let refreshPending=false;
+function scheduleRefresh(){
+ if(refreshPending)return;
+ refreshPending=true;
+ Promise.resolve().then(()=>{refreshPending=false;translate()});
+}
+function startObserver(){
+ const observer=new MutationObserver(records=>{
+  if(records.some(record=>!record.target.parentElement?.closest('[data-language-switcher]')))scheduleRefresh();
+ });
+ observer.observe(document.body,{subtree:true,childList:true,characterData:true});
+}
+function initialize(){mount();startObserver()}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initialize,{once:true});else initialize();
 })();
