@@ -6,28 +6,35 @@ const originals=new WeakMap(); const attrs=new WeakMap();
 const choose=()=>{try{return localStorage.getItem('avenor-language')}catch{return null}};
 let active=langs.includes(choose())?choose():'ru';
 function translate(){
- document.documentElement.lang=active;
+ document.documentElement.setAttribute('lang',active);
  document.querySelectorAll('title,meta[name="description"],meta[property="og:title"],meta[property="og:description"],input[placeholder],textarea[placeholder],input[aria-label],textarea[aria-label],img[alt],form[data-title]').forEach(el=>{
-  if(el.tagName==='TITLE'){const base=originals.get(el)??el.textContent; originals.set(el,base);el.textContent=render(base);return;}
-  for(const attr of el.tagName==='META'?['content']:el.tagName==='IMG'?['alt']:el.tagName==='FORM'?['data-title']:['placeholder','aria-label']){
-   if(!el.hasAttribute(attr))continue;
-   let data=attrs.get(el);if(!data){data={};attrs.set(el,data)};
-   if(!(attr in data))data[attr]=el.getAttribute(attr);
-   el.setAttribute(attr,render(data[attr]));
+  if(el.tagName==='TITLE'){
+   const original=originals.has(el)?originals.get(el):el.textContent;
+   originals.set(el,original);el.textContent=render(original);return;
   }
+  const names=el.tagName==='META'?['content']:el.tagName==='IMG'?['alt']:el.tagName==='FORM'?['data-title']:['placeholder','aria-label'];
+  let cache=attrs.get(el);if(!cache){cache={};attrs.set(el,cache)}
+  names.forEach(name=>{if(!el.hasAttribute(name))return;
+   if(!(name in cache))cache[name]=el.getAttribute(name);
+   el.setAttribute(name,render(cache[name]));
+  });
  });
- const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let node;
- while((node=walker.nextNode())){
-  if(node.parentElement?.closest('script,style,textarea,code,pre'))continue;
-  const base=originals.get(node)??node.nodeValue;
-  if(!base.trim())continue;
-  originals.set(node,base);
-  const translated=render(base);
-  if(node.nodeValue!==translated)node.nodeValue=translated;
- }
- document.querySelectorAll('[data-language-choice]').forEach(b=>{
-  const selected=b.dataset.languageChoice===active;
-  b.setAttribute('aria-pressed',String(selected));b.classList.toggle('is-active',selected)
+ // Use element text nodes rather than TreeWalker for mobile Safari stability.
+ // Preserve nested links and inline elements, replacing only text nodes.
+ document.querySelectorAll('body *').forEach(el=>{
+  if(el.closest('script,style,textarea,code,pre,[data-language-switcher]'))return;
+  el.childNodes.forEach(node=>{
+   if(node.nodeType!==3||!node.nodeValue.trim())return;
+   const original=originals.has(node)?originals.get(node):node.nodeValue;
+   originals.set(node,original);
+   const updated=render(original);
+   if(node.nodeValue!==updated)node.nodeValue=updated;
+  });
+ });
+ document.querySelectorAll('[data-language-choice]').forEach(button=>{
+  const selected=button.dataset.languageChoice===active;
+  button.classList.toggle('is-active',selected);
+  button.setAttribute('aria-pressed',String(selected));
  });
 }
 function render(value){
