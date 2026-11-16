@@ -20,7 +20,7 @@
   };
   document.querySelectorAll('form[data-local-form]').forEach(form => {
     let summary = '';
-    const title = form.dataset.title || 'Заявка';
+    const title = form.dataset.title || 'Request';
     const status = form.querySelector('[data-form-status]');
     const result = form.querySelector('[data-form-result]');
     const output = form.querySelector('[data-form-text]');
@@ -37,7 +37,7 @@
       const email = window.OFFSET_CONFIG?.email;
       const sendLink = form.querySelector('[data-send]');
       if (sendLink && email) {sendLink.href = `mailto:${email}?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(summary)}`;sendLink.hidden = false;}
-      if (status) status.textContent = form.hasAttribute('data-offset-brief') ? `Бриф готов. Откройте письмо или скопируйте текст${email ? ' и отправьте на '+email : ''}.` : 'Заявка подготовлена. Это демо: данные не отправлены. Сохраните или скопируйте текст.';
+      if (status) status.textContent = form.hasAttribute('data-avenor-brief') ? `Бриф готов. Откройте письмо или скопируйте текст${email ? ' и отправьте на '+email : ''}.` : 'Заявка подготовлена. Это демо: данные не отправлены. Сохраните или скопируйте текст.';
       output?.focus();
     });
     form.querySelector('[data-download]')?.addEventListener('click', () => {if (summary) download(summary, title);});
